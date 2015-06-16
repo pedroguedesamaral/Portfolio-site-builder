@@ -6,7 +6,7 @@
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://marcosmoura@bitbucket.org/marcosmoura/portfolio-pedro-guedes.git"
+    "url": "https://bitbucket.org/marcosmoura/portfolio-pedro-guedes.git"
   },
   "private": true,
   "devDependencies": {
