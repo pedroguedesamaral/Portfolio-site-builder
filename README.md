@@ -1,10 +1,3 @@
-[![NPM version](http://img.shields.io/npm/v/generator-scaffold.svg?style=flat)](http://npmjs.org/generator-scaffold)
-[![NPM downloads](http://img.shields.io/npm/dm/generator-scaffold.svg?style=flat)](http://npmjs.org/generator-scaffold)
-[![License Tyoe](http://img.shields.io/npm/l/generator-scaffold.svg?style=flat)](http://npmjs.org/generator-scaffold)
-[![Dependency Status](http://img.shields.io/david/marcosmoura/generator-scaffold.svg?style=flat)](https://david-dm.org/marcosmoura/generator-scaffold)
-[![Build Status](http://img.shields.io/travis/marcosmoura/generator-scaffold/master.svg?style=flat)](https://travis-ci.org/marcosmoura/generator-scaffold)
-
-
 # Portfolio - Pedro Guedes
 
 A personal portfolio of designer Pedro Guedes. This project was built on top of Scaffold.
