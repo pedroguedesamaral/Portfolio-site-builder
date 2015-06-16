@@ -24,7 +24,7 @@ module.exports = {
         bsFiles: {
             src: [
                 '<%= scaffold.staging.assets %>/**/*.{css,js,jpg,jpeg,png,gif,json}',
-                '<%= scaffold.staging.path %>/**/*.{html,hbs,json,xml,json,png,gif}'
+                '<%= scaffold.staging.path %>/**/*.{html,xml,json}'
             ]
         },
         options: {
@@ -37,7 +37,7 @@ module.exports = {
         bsFiles: {
             src: [
                 '<%= scaffold.build.assets %>/**/*.{css,js,jpg,jpeg,png,gif,json}',
-                '<%= scaffold.build.path %>/**/*.{html,hbs,json,xml,json,png,gif}'
+                '<%= scaffold.build.path %>/**/*.{html,xml,json}'
             ]
         },
         options: {

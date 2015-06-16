@@ -7,7 +7,7 @@ module.exports = {
             dest: '<%= scaffold.staging.path %>',
             src: [
                 '*.{ico,png,gif}',
-                '**/*.{txt,json,xml,hbs}',
+                '**/*.{txt,json,xml}',
                 '.htaccess',
                 'assets/**/*',
                 '!assets/**/*.{gitignore,svn,DS_Store}'
@@ -44,8 +44,7 @@ module.exports = {
                 '.htaccess',
                 'assets/**/*',
                 '!assets/**/*.{gitignore,svn,DS_Store}',
-                '!assets/{less,js}/**',
-                '**/*.hbs'
+                '!assets/{less,js}/**'
             ]
         }, {
             expand: true,

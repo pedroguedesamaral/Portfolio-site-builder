@@ -7,8 +7,8 @@ module.exports = {
         cwd: '<%= scaffold.staging.path %>',
         dest: '<%= scaffold.staging.path %>',
         src: [
-            '**/*.{html,hbs}',
-            '!assets/**/*.{html,hbs}'
+            '**/*.html',
+            '!assets/**/*.html'
         ],
         ext: '.html'
     }

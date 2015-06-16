@@ -1,6 +1,6 @@
 module.exports = {
     options: {
-        exclude: ['modernizr']
+        exclude: []
     },
     staging: {
         src: ['<%= scaffold.staging.path %>/**/*.html']
