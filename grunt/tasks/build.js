@@ -14,12 +14,11 @@ module.exports = function (grunt) {
         'csso',
         'copy:build',
         'cssmin',
-        'imageoptim',
+        'imagemin',
         'imageEmbed',
         'rev',
         'usemin',
         'htmlmin',
-        'compress',
         'clean:tmp'
     ]);
 };
