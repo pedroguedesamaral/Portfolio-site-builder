@@ -2,9 +2,8 @@
    ========================================================================== */
 
 body {
-    background: @color-body-background;
     color: @color-body-text;
-    font: 400 16px/1.5em @font-helvetica;
+    font: 500 16px/1.5em @font-halant;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-overflow-scrolling: touch;
@@ -13,6 +12,9 @@ body {
 
 .container {
     position: relative;
+    background: url(../img/bg-body.jpg) repeat;
+    background-size: 115/@em 115/@em;
+    text-align: center;
 
     /* 320px */
     @media only screen and (max-width: 20em) {
@@ -20,28 +22,37 @@ body {
     }
 
     /* 480px */
-    @media only screen and (min-width: 30em) {
+    @media only screen and (max-width: 30em) {
+        @base-font-size: 13;
 
+        .em-font-size(@base-font-size, 16);
+        line-height: 1.5em;
     }
+}
 
-    /* 640px */
-    @media only screen and (min-width: 40em) {
+a:not(.button) {
+    display: inline-block;
+    border-bottom: 2/@em solid;
+    transition: .2s @material-timing;
+    color: inherit;
+    line-height: 1.1em;
+    text-decoration: none;
 
+    &:hover,
+    &:focus {
+        margin: 0 -5/@em;
+        padding: 0 5/@em;
     }
+}
 
-    /* 768px */
-    @media only screen and (min-width: 48em) {
+.b-lazy {
+    opacity: 0;
+    transform: translate3D(0, -20/@em, 0);
+    transition: .3s .1s @material-timing;
 
-    }
-
-    /* 1024px */
-    @media only screen and (min-width: 64em) {
-
-    }
-
-    /* 1280px */
-    @media only screen and (min-width: 80em) {
-
+    &.b-loaded {
+        opacity: 1;
+        transform: translate3D(0, 0, 0);
     }
 }
 
@@ -51,7 +62,89 @@ body {
    ========================================================================== */
 
 .main-header {
+    max-width: 950/@em;
+    padding: 25/@em 10/@em;
+    margin: auto;
     position: relative;
+    opacity: 0;
+    transform: translate3D(0, -30/@em, 0);
+    .is-loaded(.1s);
+}
+
+.logo-pedro-guedes {
+    .cf;
+    text-align: left;
+
+    @media @600 {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        text-align: center;
+    }
+
+    img {
+        width: 56/@em;
+        height: 70/@em;
+        margin-right: 34/@em;
+        float: left;
+
+        @media @600 {
+            margin: 0;
+            float: none;
+        }
+    }
+
+    .person {
+        margin: 15/@em 0 0;
+        display: inline-block;
+        font-family: @font-montserrat;
+        font-size: 1em;
+        font-weight: 400;
+    }
+
+    .person-name,
+    .person-role {
+        display: block;
+        line-height: 1.3em;
+    }
+
+    .person-name {
+        @base-font-size: 18;
+
+        .em-font-size(@base-font-size, 16);
+        text-transform: uppercase;
+    }
+
+    .person-role {
+        @base-font-size: 12;
+
+        .em-font-size(@base-font-size, 16);
+    }
+}
+
+.main-header-slogan {
+    @base-font-size: 22;
+
+    margin: 90/@em 0 25/@em;
+    padding: 0 90/@em;
+    transition: .2s @material-timing;
+    .em-font-size(@base-font-size, 16);
+    line-height: 30/@em;
+
+    @media @600 {
+        margin-top: 50/@em;
+        padding: 0;
+    }
+
+    a {
+        color: #8595A5;
+
+        &:hover,
+        &:focus {
+            border-color: lighten(#8595A5, 7%);
+            color: lighten(#8595A5, 7%);
+        }
+    }
 }
 
 
@@ -61,6 +154,206 @@ body {
 
 .main-content {
     position: relative;
+    overflow: hidden;
+    background: url(../img/bg-main-content.jpg) repeat;
+    background-size: 115/@em 115/@em;
+}
+
+.page-header {
+    max-width: 550/@em;
+    margin: auto;
+    padding: 57/@em 20/@em;
+    transform: translate3D(0, -50/@em, 0);
+    .is-loaded(.2s);
+    color: #4D657A;
+
+    a {
+        color: inherit;
+    }
+}
+
+.page-header-icon {
+    max-width: 218/@em;
+}
+
+.page-header-title {
+    @base-font-size: 22;
+
+    font-family: @font-montserrat;
+    .em-font-size(@base-font-size, 16);
+    line-height: 1.6em;
+}
+
+.page-header-text {
+    @base-font-size: 22;
+
+    .em-font-size(@base-font-size, 16);
+    line-height: 1.5em;
+}
+
+.page-article {
+    max-width: 620/@em;
+    margin: auto;
+    padding: 110/@em 20/@em 70/@em;
+    position: relative;
+    color: #fff;
+
+    > * {
+        position: relative;
+        z-index: 2;
+    }
+
+    &:after {
+        position: absolute;
+        top: 0;
+        right: -999em;
+        bottom: 0;
+        left: -999em;
+        z-index: 1;
+        background: url(../img/bg-article.jpg) repeat;
+        background-size: 115/@em 115/@em;
+        content: " ";
+    }
+}
+
+.work-image {
+    margin-bottom: 30/@em;
+}
+
+.work-title {
+    @base-font-size: 40;
+
+    margin-bottom: 15/@em;
+    .em-font-size(@base-font-size, 16);
+    font-family: @font-montserrat;
+}
+
+.work-role {
+    @base-font-size: 22;
+
+    margin-bottom: 30/@em;
+    display: block;
+    .em-font-size(@base-font-size, 16);
+    line-height: 1.2em;
+}
+
+.work-description {
+    @base-font-size: 18;
+
+    margin-bottom: 60/@em;
+    .em-font-size(@base-font-size, 16);
+    line-height: 1.5em;
+}
+
+.button {
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+    border: none;
+    font: inherit;
+    line-height: normal;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+}
+
+.work-link {
+    @base-font-size: 20;
+
+    padding: 10/@em 32/@em;
+    background-color: #3B7590;
+    border: 2px solid #3B7590;
+    transition: .2s @material-timing;
+    color: #fff;
+    font-family: @font-montserrat;
+    .em-font-size(@base-font-size, 16);
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+        transform: translate3D(0, 5/@em, 0);
+        background-color: lighten(#3B7590, 3%);
+        border-bottom: 2/@em solid darken(#3B7590, 3%);
+    }
+}
+
+.page-footer {
+    max-width: 780/@em;
+    margin: auto;
+    padding: 60/@em 20/@em;
+    color: #4D657A;
+
+    small {
+        display: block;
+    }
+}
+
+.page-footer-button {
+    @base-font-size: 40;
+
+    width: 630/@em;
+    max-width: 100%;
+    height: 216/@em;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    background-color: #4D657A;
+    border: 2px solid #4D657A;
+    transition: .2s @material-timing;
+    color: #fff;
+    font-family: @font-montserrat;
+    .em-font-size(@base-font-size, 16);
+    line-height: 1.1em;
+
+    &:hover,
+    &:focus {
+        background-color: lighten(#4D657A, 3%);
+        border-bottom: 2/@em solid darken(#4D657A, 3%);
+    }
+
+    @media @360 {
+        @base-font-size: 28;
+
+        .em-font-size(@base-font-size, 16);
+    }
+
+    small {
+        @base-font-size: 20;
+
+        margin-top: 10/@em;
+        .em-font-size(@base-font-size, 40);
+        line-height: 1.3em;
+    }
+}
+
+.page-footer-text {
+    @base-font-size: 22;
+
+    margin: 27/@em 0 40/@em;
+    .em-font-size(@base-font-size, 16);
+    line-height: 1.4em;
+}
+
+.page-footer-link {
+    @base-font-size: 22;
+
+    .em-font-size(@base-font-size, 16);
+    line-height: 1.4em;
 }
 
 
@@ -69,5 +362,50 @@ body {
    ========================================================================== */
 
 .main-footer {
+    max-width: 560/@em;
+    margin: auto;
+    padding: 54/@em 20/@em 20/@em;
     position: relative;
+    transform: translate3D(0, -60/@em, 0);
+    .is-loaded(.3s);
+}
+
+.social-networks {
+    margin-bottom: 40/@em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    a {
+        @base-font-size: 18;
+
+        border-bottom-color: transparent;
+        font-family: @font-montserrat;
+        .em-font-size(@base-font-size, 16);
+        line-height: 1.6em;
+
+        &:hover,
+        &:focus {
+            border-bottom-color: inherit;
+        }
+
+        @media @360 {
+            margin: 10/@em 10%;
+            flex: 0 0 30%;
+
+            &:hover,
+            &:focus {
+                margin: 10/@em 10%;
+                padding: 0;
+            }
+        }
+    }
+}
+
+.copyright {
+    @base-font-size: 12;
+
+    .em-font-size(@base-font-size, 16);
+    font-weight: 300;
+    line-height: 1em;
 }

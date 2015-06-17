@@ -1,0 +1,13 @@
+.is-loaded(@delay: .3s, @opacity: 0) {
+    body & {
+        overflow: hidden;
+        opacity: @opacity;
+        transition: .5s @delay @material-timing;
+        transition-property: opacity, transform;
+    }
+
+    body.is-loaded & {
+        opacity: 1;
+        transform: translate3D(0, 0, 0);
+    }
+}

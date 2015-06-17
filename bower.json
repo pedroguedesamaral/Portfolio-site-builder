@@ -4,6 +4,8 @@
   "name": "portfolio-pedro-guedes",
   "dependencies": {
     "fastclick": "~1.0.6",
-    "normalize-css": "~3.0.3"
+    "normalize-css": "~3.0.3",
+    "loadcss": "filamentgroup/loadCSS#~0.1.7",
+    "blazy": "~1.3.1"
   }
 }
