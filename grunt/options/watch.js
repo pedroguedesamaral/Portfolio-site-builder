@@ -42,19 +42,31 @@ module.exports = {
         ]
     },
     html: {
-        files: ['<%= scaffold.dev.path %>/**/*.html'],
+        files: [
+            '<%= scaffold.dev.path %>/**/*.{html,hbs}',
+            '!<%= scaffold.dev.path %>/{templates,projects}/**/*.html'
+        ],
         tasks: [
-            'newer:copy:stagingHtml',
+            'newer:assemble:staging',
             'newer:htmlhint',
             'wiredep:staging',
             'newer:prettify'
+        ]
+    },
+    htmlTemplate: {
+        files: ['<%= scaffold.dev.path %>/{templates,projects}/**/*.html'],
+        tasks: [
+            'assemble:staging',
+            'wiredep:staging',
+            'htmlhint',
+            'prettify'
         ]
     },
     files: {
         files: [
             '<%= scaffold.dev.path %>/**/*',
             '!<%= scaffold.dev.assets %>/less/**/*',
-            '!<%= scaffold.dev.path %>/**/*.html'
+            '!<%= scaffold.dev.path %>/**/*.{html,hbs}'
         ],
         tasks: ['newer:copy:staging']
     }

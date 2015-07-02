@@ -10,10 +10,12 @@
 
         config = {
             pkg: grunt.file.readJSON('package.json'),
-            scaffold:  {
+            scaffold: {
                 dev: {
                     path: 'dev',
-                    assets: 'dev/assets'
+                    assets: 'dev/assets',
+                    projects: 'dev/projects',
+                    templates: 'dev/templates'
                 },
                 staging: {
                     path: 'staging',
@@ -39,6 +41,8 @@
 
         require('load-grunt-tasks')(grunt);
         require('time-grunt')(grunt);
+
+        grunt.loadNpmTasks('assemble');
 
         grunt.loadTasks('grunt/tasks/');
 

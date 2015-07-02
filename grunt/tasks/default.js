@@ -4,7 +4,7 @@ module.exports = function (grunt) {
         'copy:staging',
         'less:staging',
         'autoprefixer:staging',
-        'newer:copy:stagingHtml',
+        'assemble:staging',
         'prettify',
         'wiredep:staging',
         'browserSync:staging',
