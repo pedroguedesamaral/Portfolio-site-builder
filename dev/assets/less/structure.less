@@ -71,9 +71,23 @@ a:not(.button) {
     .is-loaded(.1s);
 }
 
+.main-top-header {
+    display: flex;
+
+    @media @600 {
+        flex-flow: column wrap;
+    }
+}
+
 .logo-pedro-guedes {
     .cf;
+    flex: 1;
     text-align: left;
+
+    @media @600 {
+        margin-bottom: -10/@em;
+        order: 2;
+    }
 
     @media @600 {
         display: flex;
@@ -119,6 +133,58 @@ a:not(.button) {
         @base-font-size: 12;
 
         .em-font-size(@base-font-size, 16);
+    }
+}
+
+.main-navigation {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    @media @600 {
+        .main-top-header & {
+            margin-bottom: 30/@em;
+            order: 1;
+        }
+    }
+
+    li {
+        padding: 0 20/@em;
+
+        @media @360 {
+            .main-top-header & {
+                padding: 0 10/@em;
+            }
+        }
+    }
+
+    a {
+        @base-font-size: 18;
+
+        border-bottom-color: transparent;
+        font-family: @font-montserrat;
+        .em-font-size(@base-font-size, 16);
+        line-height: 1.6em;
+
+        &:hover,
+        &:focus {
+            border-bottom-color: inherit;
+        }
+
+        @media @360 {
+            margin: 10/@em 10%;
+            flex: 0 0 30%;
+
+            &:hover,
+            &:focus {
+                margin: 10/@em 10%;
+                padding: 0;
+            }
+        }
     }
 }
 
@@ -191,60 +257,6 @@ a:not(.button) {
     line-height: 1.5em;
 }
 
-.page-article {
-    max-width: 620/@em;
-    margin: auto;
-    padding: 110/@em 20/@em 70/@em;
-    position: relative;
-    color: #fff;
-
-    > * {
-        position: relative;
-        z-index: 2;
-    }
-
-    &:after {
-        position: absolute;
-        top: 0;
-        right: -999em;
-        bottom: 0;
-        left: -999em;
-        z-index: 1;
-        background: url(../img/bg-article.jpg) repeat;
-        background-size: 115/@em 115/@em;
-        content: " ";
-    }
-}
-
-.work-image {
-    margin-bottom: 30/@em;
-}
-
-.work-title {
-    @base-font-size: 40;
-
-    margin-bottom: 15/@em;
-    .em-font-size(@base-font-size, 16);
-    font-family: @font-montserrat;
-}
-
-.work-role {
-    @base-font-size: 22;
-
-    margin-bottom: 30/@em;
-    display: block;
-    .em-font-size(@base-font-size, 16);
-    line-height: 1.2em;
-}
-
-.work-description {
-    @base-font-size: 18;
-
-    margin-bottom: 60/@em;
-    .em-font-size(@base-font-size, 16);
-    line-height: 1.5em;
-}
-
 .button {
     margin: 0;
     display: inline-block;
@@ -271,26 +283,6 @@ a:not(.button) {
     }
 }
 
-.work-link {
-    @base-font-size: 20;
-
-    padding: 10/@em 32/@em;
-    background-color: #3B7590;
-    border: 2px solid #3B7590;
-    transition: .2s @material-timing;
-    color: #fff;
-    font-family: @font-montserrat;
-    .em-font-size(@base-font-size, 16);
-    text-transform: uppercase;
-
-    &:hover,
-    &:focus {
-        transform: translate3D(0, 5/@em, 0);
-        background-color: lighten(#3B7590, 3%);
-        border-bottom: 2/@em solid darken(#3B7590, 3%);
-    }
-}
-
 .page-footer {
     max-width: 780/@em;
     margin: auto;
@@ -314,6 +306,7 @@ a:not(.button) {
     justify-content: center;
     background-color: #4D657A;
     border: 2px solid #4D657A;
+    border-radius: 4/@em;
     transition: .2s @material-timing;
     color: #fff;
     font-family: @font-montserrat;
@@ -366,39 +359,16 @@ a:not(.button) {
     margin: auto;
     padding: 54/@em 20/@em 20/@em;
     position: relative;
+    background-color: rgba(0, 0, 0, .15);
     transform: translate3D(0, -60/@em, 0);
     .is-loaded(.3s);
 }
 
 .social-networks {
     margin-bottom: 40/@em;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
 
-    a {
-        @base-font-size: 18;
-
-        border-bottom-color: transparent;
-        font-family: @font-montserrat;
-        .em-font-size(@base-font-size, 16);
-        line-height: 1.6em;
-
-        &:hover,
-        &:focus {
-            border-bottom-color: inherit;
-        }
-
-        @media @360 {
-            margin: 10/@em 10%;
-            flex: 0 0 30%;
-
-            &:hover,
-            &:focus {
-                margin: 10/@em 10%;
-                padding: 0;
-            }
-        }
+    li {
+        padding: 0 7/@em;
     }
 }
 
