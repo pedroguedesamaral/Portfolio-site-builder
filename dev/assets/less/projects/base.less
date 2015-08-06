@@ -54,9 +54,9 @@
 .work-link {
     @base-font-size: 20;
 
-    padding: 10/@em 32/@em;
-    background-color: #3B7590;
-    border: 2px solid #3B7590;
+    padding: 12/@em 34/@em;
+    background-color: rgba(0, 0, 0, 0.4);
+    
     border-radius: 4/@em;
     transition: .2s @material-timing;
     color: #fff;
@@ -66,8 +66,6 @@
 
     &:hover,
     &:focus {
-        transform: translate3D(0, 5/@em, 0);
-        background-color: lighten(#3B7590, 3%);
-        border-bottom: 2/@em solid darken(#3B7590, 3%);
+        background-color: rgba(0, 0, 0, 0.6);
     }
 }
